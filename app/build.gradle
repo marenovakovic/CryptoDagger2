@@ -1,0 +1,58 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion Versions.compile_sdk
+    defaultConfig {
+        applicationId "com.marko.cryptodagger2"
+        minSdkVersion Versions.min_sdk
+        targetSdkVersion Versions.target_sdk
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation Deps.kotlin_stdlib
+
+    implementation Deps.app_compat
+    implementation Deps.constraint_layout
+    implementation Deps.recycler_view
+    implementation Deps.card_view
+    implementation Deps.fab
+
+    // Anko
+    implementation Deps.anko_commons
+
+    // RxJava and Retrofit
+    implementation Deps.livedata_and_viewmodel
+    implementation Deps.rxjava
+    implementation Deps.rxandroid
+    implementation Deps.rxjava_retrofit_adapter
+    implementation Deps.gson
+    implementation Deps.retrofit
+    implementation Deps.ok_http
+    implementation Deps.ok_http_logger
+
+    // Dagger 2
+    implementation Deps.dagger_2
+    kapt Deps.dagger_2_compiler
+
+    testImplementation Deps.junit
+    androidTestImplementation Deps.support_test_runner
+    androidTestImplementation Deps.espresso_core
+}
