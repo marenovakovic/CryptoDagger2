@@ -2,7 +2,6 @@ package com.marko.cryptodagger2.view.activities
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -13,7 +12,7 @@ import com.marko.cryptodagger2.viewmodel.CoinViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.toast
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
 	private val viewModel: CoinViewModel by lazy {
 		ViewModelProviders.of(this).get(CoinViewModel::class.java)
@@ -25,11 +24,7 @@ class MainActivity : AppCompatActivity() {
 		}
 	}
 
-	private val errorObserver: Observer<String> = Observer {
-		it?.let {
-			toast(it)
-		}
-	}
+	private val errorObserver: Observer<String> = Observer { showError(it) }
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
