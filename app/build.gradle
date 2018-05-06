@@ -25,9 +25,13 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
 
     implementation Deps.kotlin_stdlib
+    implementation Deps.kotlin_lib
+
+    implementation project(':data')
+    implementation project(':domain')
 
     implementation Deps.app_compat
     implementation Deps.constraint_layout
@@ -41,6 +45,7 @@ dependencies {
     // RxJava and Retrofit
     implementation Deps.livedata_and_viewmodel
     implementation Deps.rxjava
+    implementation Deps.rxkotlin
     implementation Deps.rxandroid
     implementation Deps.rxjava_retrofit_adapter
     implementation Deps.gson
@@ -51,6 +56,12 @@ dependencies {
     // Dagger 2
     implementation Deps.dagger_2
     kapt Deps.dagger_2_compiler
+
+    // Room
+    implementation Deps.room
+    implementation Deps.room_rxjava
+    kapt Deps.room_compiler
+    annotationProcessor Deps.room_compiler
 
     testImplementation Deps.junit
     androidTestImplementation Deps.support_test_runner

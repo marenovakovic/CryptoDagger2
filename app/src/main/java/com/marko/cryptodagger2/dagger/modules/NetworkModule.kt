@@ -1,7 +1,7 @@
 package com.marko.cryptodagger2.dagger.modules
 
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
-import com.marko.cryptodagger2.networking.CoinService
+import com.marko.domain.networking.CoinService
 import com.marko.cryptodagger2.networking.NetInterceptor
 import dagger.Module
 import dagger.Provides

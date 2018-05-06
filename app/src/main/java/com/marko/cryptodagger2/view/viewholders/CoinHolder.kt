@@ -4,7 +4,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.TextView
 import com.marko.cryptodagger2.R
-import com.marko.cryptodagger2.models.Coin
+import com.marko.domain.models.Coin
 
 class CoinHolder(view: View): RecyclerView.ViewHolder(view) {
 	private val idTextView = view.findViewById<TextView>(R.id.coinId)

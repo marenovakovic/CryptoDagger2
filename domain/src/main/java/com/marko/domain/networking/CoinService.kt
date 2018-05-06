@@ -1,6 +1,6 @@
-package com.marko.cryptodagger2.networking
+package com.marko.domain.networking
 
-import com.marko.cryptodagger2.models.CoinData
+import com.marko.domain.models.CoinData
 import io.reactivex.Maybe
 import retrofit2.http.GET
 

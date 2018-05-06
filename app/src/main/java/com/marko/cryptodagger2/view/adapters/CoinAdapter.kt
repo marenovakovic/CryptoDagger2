@@ -4,7 +4,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.ViewGroup
 import com.marko.cryptodagger2.R
 import com.marko.cryptodagger2.extensions.inflate
-import com.marko.cryptodagger2.models.Coin
+import com.marko.domain.models.Coin
 import com.marko.cryptodagger2.view.viewholders.CoinHolder
 
 class CoinAdapter: RecyclerView.Adapter<CoinHolder>() {
